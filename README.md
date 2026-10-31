@@ -6,7 +6,7 @@ Three responsive pages that adapt to phone, tablet and laptop:
 - `designs.html`: Book by design (filter by style)
 - `map.html`: Techs near you (list and map; tap a pin or a card to select, sort by distance, rating or price)
 
-Everything else shows a "coming soon" message. All names, prices and photos are sample data.
+Everything else shows a "coming soon" message. All names and prices are sample data. Photos are in `assets/photos/`; replace them keeping the same file names.
 
 ## Deploy to Vercel
 

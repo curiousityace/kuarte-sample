@@ -6,22 +6,23 @@
 <title>KuArte · Techs near you</title>
 <meta name="description" content="Verified nail technicians near you in Panabo City.">
 <meta name="theme-color" content="#5E1720">
-<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="./assets/photos/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="./assets/photos/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Marcellus&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./kuarte.css">
-<link rel="stylesheet" href="./sample.css">
+<link rel="stylesheet" href="./app.css">
 </head>
-<body class="pg-map">
-<div class="pv"><b>Preview</b> · sample data, not open for bookings yet</div>
+<body class="pg-search">
+<div class="pv"><span><b>Preview</b> · sample data, not open for bookings yet</span></div>
 <header class="hd"><div class="in">
-  <a class="wm" href="index.html" aria-label="KuArte home">KUARTE</a>
+  <a href="index.html" aria-label="KuArte home"><img class="logo" src="assets/photos/logo-h.png" alt="KuArte" width="138" height="44"></a>
   <nav class="hnav only-l" aria-label="Main"><a href="index.html">Explore</a><a href="designs.html">Designs</a><a href="map.html" class="on" aria-current="page">Map</a><a href="#" data-soon="My bookings">My bookings</a><a href="#" data-soon="Messages">Messages</a></nav>
   <span class="sp"></span>
   <a class="lnk only-l" href="#" data-soon="Nail tech sign-up">For nail techs</a>
   <span class="av s only-l" aria-hidden="true">MS</span>
-  <button class="ib only-s" type="button" data-soon="Notifications" aria-label="Notifications"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></button>
+  <a class="ib only-s" href="#" data-soon="Notifications" aria-label="Notifications"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></a>
 </div></header>
 <main class="wrap">
 
@@ -29,14 +30,16 @@
     <h1 class="page-t only-l">Techs near Gredu, Panabo</h1>
     <div class="mtop">
       <form class="search" action="map.html" method="get" role="search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" name="q" placeholder="Search techs, designs, services" aria-label="Search" enterkeyhint="search" autocomplete="off"></form>
-      <button class="ib" type="button" data-soon="More filters" aria-label="Filters"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg></button>
+      <a class="ib" id="fbtn" href="#" data-soon="More filters" aria-label="Filters"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg></a>
     </div>
     <div class="chips" role="group" aria-label="Sort and filter">
       <button class="chip on" type="button" data-sort="near" aria-pressed="true">Nearest</button>
       <button class="chip" type="button" data-sort="top" aria-pressed="false">Top rated</button>
       <button class="chip" type="button" data-sort="low" aria-pressed="false">Lowest price</button>
+      <button class="chip" type="button" data-sort="soon" aria-pressed="false">Soonest</button>
       <button class="chip" type="button" data-today aria-pressed="false">Open today</button>
     </div>
+    <div class="fon" id="fon" hidden></div>
     <div class="split">
       <div class="mapcol">
         <div class="map mapbox" role="group" aria-label="Map of nearby techs">
@@ -61,8 +64,10 @@
     </div>
   </section>
 </main>
-<footer class="ft"><div class="in"><span class="wm" style="color: #FCF8F7; font-size: 20px">KUARTE</span><span>Ku, from kuko. Arte, to groom. Launching in Panabo City.</span><a class="lnk" href="#" data-soon="Nail tech sign-up" style="color: #E7C27A">Are you a nail tech? Join free</a></div></footer>
-<nav class="tabbar only-s" aria-label="Main"><a href="index.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Home</a><a href="designs.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Designs</a><a href="map.html" class="on" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Map</a><a href="#" data-soon="Bookings"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Bookings</a><a href="#" data-soon="Accounts"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Account</a></nav>
-<script src="./sample.js"></script>
+<footer class="ft"><div class="in"><img class="mk" src="assets/photos/mark.png" alt="" width="34" height="29"><span>Ku, from kuko. Arte, for art. Launching in Panabo City.</span><a class="lnk" href="#" data-soon="Nail tech sign-up" style="color: #E7C27A">Are you a nail tech? Join free</a></div></footer>
+<nav class="tabbar only-s" aria-label="Main"><a href="index.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Home</a><a href="designs.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Designs</a><a href="map.html" class="on" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Map</a><a href="#" data-soon="My bookings"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Bookings</a><a href="#" data-soon="Accounts"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Account</a></nav>
+
+<script src="./app-data.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
